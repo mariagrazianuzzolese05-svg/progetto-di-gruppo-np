@@ -14,8 +14,12 @@ np.searchsorted(arr, x) → trovare posizione ordinata di inserimento
 
 minimo=np.argmin(dati_caricati)
 massimo=np.argmax(dati_caricati)
-percentuale=np.percentile(dati_caricati)
-ordina=np.searchsorted(dati_caricati, 1)
+percentuale=np.percentile(dati_caricati,50)
+
+dati_piatti = dati_caricati.flatten()
+# Importante: searchsorted vuole dati ORDINATI
+dati_ordinati = np.sort(dati_piatti)
+ordina = np.searchsorted(dati_ordinati, 1)
 
 '''Operazioni matriciali e algebriche (dot, transpose, norme)
 Gli array multidimensionali permettono analisi strutturali complesse:
@@ -29,7 +33,7 @@ trs=np.transpose(dati_caricati)
 norma=np.linalg.norm(dati_caricati)
 co=np.cov(dati_caricati.T)
 
-'''with open("risultati.txt","w") as f:
+with open("risultati.txt","w") as f:
         
         f.write(f"{minimo}\n")
         f.write(f"{massimo}\n")
@@ -38,5 +42,5 @@ co=np.cov(dati_caricati.T)
         f.write(f"{prd}\n")
         f.write(f"{trs}\n")
         f.write(f"{norma}\n")
-        f.write(f"{co}\n")'''
+        f.write(f"{co}\n")
 
