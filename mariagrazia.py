@@ -33,7 +33,7 @@ trs=np.transpose(dati_caricati)
 norma=np.linalg.norm(dati_caricati)
 co=np.cov(dati_caricati.T)
 
-with open("risultati.txt","w") as f:
+with open("risultati.txt","a") as f:
         
         f.write(f"{minimo}\n")
         f.write(f"{massimo}\n")

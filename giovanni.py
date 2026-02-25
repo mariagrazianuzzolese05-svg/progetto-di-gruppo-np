@@ -25,9 +25,19 @@ def analizza_per_assi(matrix):
     return (f"--- RISULTATI 2D (ASSI) ---\n"
             f"Somma colonne (axis=0): {somma_colonne}\n"
             f"Media righe (axis=1): {media_righe}\n")
+x=analizza_statistiche_base()
+y=analizza_per_assi()
+
+
+with open("risultati.txt","a") as f:
+        
+        f.write(f"{x}\n")
+        f.write(f"{y}\n")
+        
+
 
 # --- LOGICA DI ESECUZIONE ---
-def main():
+'''def main():
     # 1. QUI HO MESSO LA LISTA DEI FILE (Invece di caricarli subito in alto)
     files = ["analisidigruppo.txt", "analisidigruppo2.txt"]
     report_finale = ""
@@ -60,4 +70,4 @@ def main():
     print("\nAnalisi conclusa. Controlla 'risultati_giovanni.txt'!")
 
 if __name__ == "__main__":
-    main()
+    main()'''
