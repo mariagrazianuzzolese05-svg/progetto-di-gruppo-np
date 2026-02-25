@@ -1,4 +1,5 @@
 import numpy as np
+np.random.seed()
 
 
 nome_file = "analisidigruppo2.txt"
